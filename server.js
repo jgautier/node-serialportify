@@ -20,7 +20,6 @@ module.exports = function(server) {
 		 * @param options options object that is passed to serialport
 		 */
 		this.open = function(port, options) {
-			console.log('opening port ' + port);
 			serialConnections[port] = new SerialPort(port, options);
 		};
 		/*
@@ -37,7 +36,6 @@ module.exports = function(server) {
 		 * @param cb callback to be executed on data
 		 */
 		this.onData = function(port, cb) {
-			console.log('on the data ' + port);
 			serialConnections[port].on('data', function(data) {
 				cb(data);
 			});
