@@ -20,7 +20,9 @@ module.exports = function(server) {
 		 * @param options options object that is passed to serialport
 		 */
 		this.open = function(port, options) {
-			serialConnections[port] = new SerialPort(port, options);
+			if(!serialConnections[port]){
+				serialConnections[port] = new SerialPort(port, options);
+		    }
 		};
 		/*
 		 * write data to port
