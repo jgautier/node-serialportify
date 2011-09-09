@@ -1,0 +1,17 @@
+{ "name" : "serialportify"
+, "description" : "Brings node-serialport to the browser via dnode."
+, "keywords" : [ "serialport" ]
+, "version" : "0.1.0"
+, "author" : "Julian Gautier <julian.gautier@alumni.neumont.edu>"
+, "main" : "server.js"
+, "dependencies" :
+  { "browserify" : ">=1.4.7"
+  , "dnode" : ">=0.8.2"
+  }
+, "browserify" : "client.js"
+, "licenses" : [ { "type" : "MIT" } ]
+, "repository" : {
+    "type" : "git",
+    "url" : "https://jgautier@github.com/jgautier/node-serialportify.git"
+  }
+}
