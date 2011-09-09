@@ -20,12 +20,12 @@ var SerialPort = function(port, options) {
 	 */
 	self.write = function(data) {
 		var writeToExecute = function() {
-				if (!isOpen) {
-					self.remote.open(port, options);
-					isOpen = true;
-				}
-				self.remote.write(port, data);
-			};
+			if (!isOpen) {
+				self.remote.open(port, options);
+				isOpen = true;
+			}
+			self.remote.write(port, data);
+		};
 		//have to do this because node-serialport is sync.  there must be a better way?
 		if (!self.remote) {
 			dnode.connect(document.location.port, function(remote) {
